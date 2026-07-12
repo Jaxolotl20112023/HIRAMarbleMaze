@@ -9,13 +9,7 @@ void __init__() {
   pinMode(button2->id,INPUT_PULLUP);
   pinMode(button3->id,INPUT_PULLUP);
   pinMode(button4->id,INPUT_PULLUP);
-  pinMode(button5->id,INPUT_PULLUP); 
-
-  motor1->port = 2;
-  motor2->port = 8; 
-  motor3->port = 9; 
-  motor4->port = 10; 
-  motor5->port = 12; 
+  pinMode(button5->id,INPUT_PULLUP);  
 
   motor1->servo.attach(motor1->port); 
   motor2->servo.attach(motor2->port); 
@@ -31,7 +25,20 @@ void __init__() {
 }
  
 void setup() {
-  Serial.begin(9600);
+  // ** SET THE PORTS OF YOUR MOTORS HERE ** 
+  motor1->port = 2;
+  motor2->port = 8; 
+  motor3->port = 9; 
+  motor4->port = 10; 
+  motor5->port = 12;  
+
+  // ** SET THE PORTS OF YOUR BUTTONS HERE **
+  button1->id = 7;
+  button2->id = 4;
+  button3->id = 6;
+  button4->id = 5;
+  button5->id = 11;
+
   //  *** DO NOT CHANGE OR TOUCH THIS CODE *** 
   __init__(); 
 
